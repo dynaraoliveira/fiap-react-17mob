@@ -6,6 +6,7 @@ import {
 } from 'react-navigation';
 
 import HomeScreen from './screens/Home';
+import MenuScreen from './screens/Menu';
 import RacesScreen from './screens/Races';
 
 const AppNavigator = createStackNavigator(
@@ -15,6 +16,9 @@ const AppNavigator = createStackNavigator(
     },
     Races: {
       screen: RacesScreen,
+    },
+    Menu: {
+      screen: MenuScreen,
     },
   },
   {

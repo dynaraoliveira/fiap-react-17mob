@@ -1,24 +1,25 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import Seasons from '../../components/Seasons';
+import MenuItem from '../../components/MenuItem';
 import LogoTitle from '../../components/LogoTitle';
 
 import { SafeAreaView } from 'react-navigation';
 
-export default class Home extends React.Component {
+export default class Menu extends React.Component {
 
   constructor(props) {
     super(props);
-    this.getData = this.getData.bind(this);
+    this.callRaces = this.callRaces.bind(this);
   }
 
   static navigationOptions = {
     headerTitle: <LogoTitle />,
   };
-  
-  getData(season) {
-    this.props.navigation.navigate('Menu', {
+
+  callRaces() {
+    season = this.props.navigation.getParam('season');
+    this.props.navigation.navigate('Races', {
       season,
     });
   }
@@ -26,7 +27,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Seasons handleClick={this.getData} />
+        <MenuItem handleClickRaces={this.callRaces}/>
       </SafeAreaView>
     );
   }

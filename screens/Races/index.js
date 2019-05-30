@@ -43,3 +43,16 @@ export default class Races extends React.Component {
     );
   }
 }
+
+
+// Promise.all([
+//   fetch(`http://ergast.com/api/f1/${season}.json`),
+//   fetch(`http://ergast.com/api/f1/${season}/drivers.json`)
+// ])  
+//   .then((responses) => responses.map((response) => response.json()))
+//   .then((data) => {
+//       console.log('temporada', data[0]);
+
+//       console.log('pilotos', data[1]);
+//       // this.props.navigation.navigate()
+//   });

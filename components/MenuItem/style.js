@@ -10,9 +10,10 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         flexWrap: "wrap",
+        justifyContent: "center",
     },
     button: {
-      width: (dimensions.fullWidth - 40) / 2,
+      width: '80%',
       justifyContent: "center",
       margin: 10,
     }

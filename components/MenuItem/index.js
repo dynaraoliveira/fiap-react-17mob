@@ -17,9 +17,17 @@ class MenuItem extends PureComponent {
     )
     
     items.push(
-      <Button style={style.button} key={`drivers`}>
+      <Button style={style.button} key={`drivers`} onPress={() => this.props.handleClickDrivers()}>
         <Text>
           {'Pilotos'}
+        </Text>
+      </Button>
+    )
+
+    items.push(
+      <Button style={style.button} key={`results`} onPress={() => this.props.handleClickResults()}>
+        <Text>
+          {'Resultados'}
         </Text>
       </Button>
     )

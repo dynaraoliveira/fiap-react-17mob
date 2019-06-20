@@ -8,6 +8,11 @@ import {
 import HomeScreen from './screens/Home';
 import MenuScreen from './screens/Menu';
 import RacesScreen from './screens/Races';
+import DriversScreen from './screens/Drivers';
+import ResultsScreen from './screens/Results';
+import RacesDetailsScreen from './screens/RacesDetails';
+import DriversDetailsScreen from './screens/DriversDetails';
+import ResultsDetailsScreen from './screens/ResultsDetails';
 
 const AppNavigator = createStackNavigator(
   {
@@ -19,6 +24,21 @@ const AppNavigator = createStackNavigator(
     },
     Menu: {
       screen: MenuScreen,
+    },
+    Drivers: {
+      screen: DriversScreen,
+    },
+    Results: {
+      screen: ResultsScreen,
+    },
+    RacesDetails: {
+      screen: RacesDetailsScreen,
+    },
+    DriversDetails: {
+      screen: DriversDetailsScreen,
+    },
+    ResultsDetails: {
+      screen: ResultsDetailsScreen,
     },
   },
   {

@@ -3,17 +3,12 @@ import React from 'react';
 import { SafeAreaView } from 'react-navigation';
 import { List, ListItem, Text } from 'native-base';
 
-export default class Races extends React.Component {
-  
+export default class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.callRacesDetails = this.callRacesDetails.bind(this);
+    this.callResultsDetails = this.callResultsDetails.bind(this);
     this.renderRow = this.renderRow.bind(this);
   }
-
-  static navigationOptions = {
-    title: 'Corridas',
-  };
 
   state = {
     races: [],
@@ -25,7 +20,7 @@ export default class Races extends React.Component {
   }
 
   getData(season) {
-    fetch(`http://ergast.com/api/f1/${season}.json`)
+    fetch(`http://ergast.com/api/f1/${season}/races.json`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -34,9 +29,9 @@ export default class Races extends React.Component {
       });
   }
 
-  callRacesDetails(round) {
+  callResultsDetails(round) {
     season = this.props.navigation.getParam('season');
-    this.props.navigation.navigate('RacesDetails', {
+    this.props.navigation.navigate('ResultsDetails', {
       season,
       round,
     });
@@ -44,10 +39,10 @@ export default class Races extends React.Component {
 
   renderRow(item) {
     return (
-      <ListItem key={item.round} button onPress={() => this.callRacesDetails(item.round)}>
+      <ListItem key={item.round} button onPress={() => this.callResultsDetails(item.round)}>
         <Text>
           {item.raceName}
-        </Text>
+        </Text>     
       </ListItem>
     )
   }
